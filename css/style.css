@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/*Estilos comunes*/
+/*--------------------------------------*/
+
+html{
+    /*font-size: 62.5%;
+    font-family: "Roboto", sans-serif;
+    font-family: "Lato", sans-serif;
+    font-optical-sizing: auto;*/
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    background-color: #222;
+
+}
+
+/*Estilos navbar responsive comunes para todos los tipos de pantalla*/
+/*-------------------------------------------------------------------*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding:1.5rem 1.5rem;
+    box-shadow: 0 0 10px grey;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-container .logo-img{
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    margin-top:5px;
+}
+
+.nav-logo{
+    font-size: 3rem;
+    color:#fff;
+}
+
+.nav-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item{
+    margin-left: 4rem;
+}
+
+.nav-link{
+    font-size: 2rem;
+    font-weight: 400;
+    color:#fff;
+}
+
+/*Hover links para links en desktop*/
+
+.nav-link:hover{
+    color:#482ff7;
+}
+
+/*Sub menú redes sociales*/
+/*--------------------------------------*/
+.nav-menu-drop{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu-drop-mobile{
+    display: none;
+}
+
+ul li:hover ul.nav-menu-drop{
+    display: block;
+}
+
+ul li ul.nav-menu-drop{
+    width:100%;
+    position: absolute;
+   
+    display: none;
+    background-color: #222;
+    justify-content: center;
+}
+
+ul li ul.nav-menu-drop li{
+    align-items: center;
+    padding: 2rem;
+
+}
+
+ul li ul.nav-menu-drop li a{
+    color: #fff;
+    font-size: 18px;
+}
+
+ul li ul.nav-menu-drop li a:hover{
+    color:#482ff7;
+}
+
+
+/* Sección principal*/
+/*------------------------------------------------*/
+
+.principal{
+    background-image: url(../img/principal.jpg);
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height: auto;
+    padding:100px 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: #333 2px 0 10px;
+}
+
+.principal h1{
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: #333333 2px 0 7px;
+
+}
+
+.principal p{
+    margin-bottom: 30px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.principal .botones-pr{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:1rem;
+    padding-top:2rem;
+}
+
+.principal .btn-pr{
+    background-color: dodgerblue;
+    width:30%;
+    color: white;
+    padding: 10px 20px;
+    margin:10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.principal .btn-pr:hover{
+    transform: scale(1.05);
+}
+
+
+/* Clases comunes para todos los sections*/
+/*------------------------------------------------*/
+
+.section{
+    padding: 60px 0;
+    border-image: fill 0 linear-gradient(#0003,#ccc);
+
+}
+
+.section h2,h3{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section h2{
+    font-size:3.5rem;
+}
+
+.section h3{
+    font-size:3rem;
+}
+
+.section p{
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 10% 0 10%; /* Arriba | Derecha | Abajo | Izquierda */
+}
+
+/* Sección nosotros*/
+/*------------------------------------------------*/
+
+.cont-nosotros{
+    display: block;
+}
+
+.cont-textos{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Sección nosotros - slide de imagenes responsive*/
+/*--------------------------------------------------------*/
+.container-slider{
+    padding: 2rem;
+}
+
+.slider-wrapper{
+    position: relative;
+    max-width: 68rem;   /*85rem;*/
+    margin: 0 auto;
+
+}
+.slider{
+    display: flex;
+    aspect-ratio: 16/9; /*8/5*/
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+    border-radius: 1rem;
+}
+
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav{
+    display:flex;
+    column-gap:1rem;
+    position:absolute;
+    bottom:1.25rem;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+}
+
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover{
+    opacity: 1;
+}
+
+/* Sección servicios*/
+/*------------------------------------------------*/
+
+.container-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:1rem;
+    align-content: space-around;
+    height: auto;
+    padding:3rem;
+    color: #000;
+}
+
+.item{
+    flex:1 1 30%;
+    min-width: 200px;
+    padding: 3rem;
+    margin:1rem;
+    background-color:#E8E1E1;
+    border-radius: 5px;
+    box-shadow: rgba(44, 42, 42, 0.35) 0px 5px 15px;
+    transition: transform 0.3s ease;
+}
+
+.item h2{
+    padding:2rem;
+    margin-bottom: 5px;
+}
+
+.item:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(44, 42, 42, 0.35) 0px 5px 15px;
+    /*box-shadow: 0 27px 14px 5px rgba(0, 0, 0, 0.15);*/
+    color: #fff;
+    text-shadow: 2px 2px grey;
+}
+
+/* Sección productos*/
+/*------------------------------------------------*/
+
+/*Trabajos*/
+
+.container-productos {
+  /*display: flex;
+  flex-direction: row;
+  justify-content: center;*/
+  /* background-color: red;height: 100%; */
+  padding: 2rem;
+  align-items: center;
+}
+
+
+.productos-grid{
+
+display: grid;
+grid-template-columns:repeat(auto-fit,minmax(250px, 1fr));
+grid-gap: 20px;
+justify-content: center;
+align-items: center;
+    
+
+}
+
+.producto{
+    padding:2rem;
+    border:1px solid #ddd;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 30px;
+    transition:transform 0.3s ease-in-out;
+
+}
+
+.producto:hover{
+    transform: scale(1.02);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.producto img{
+    object-fit: cover;
+    width: 100%;
+    height: 220px;
+    border-radius:15px;
+}
+
+.producto h3{
+    font-size:1.5rem;
+    margin-bottom:5px;
+}
+
+.producto-link{
+    background-color: dodgerblue;
+    width:30%;
+    color: white;
+    padding: 10px 20px;
+    margin:10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto-link:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+
+
+
+
+/* Sección testimonios*/
+/*------------------------------------------------*/
+
+
+.box-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left:15px;
+}
+
+.box{
+    width:25%;
+    min-width: 325px;
+    aspect-ratio: 1/1;
+    background-color: #F5E9E9;
+    margin:1.25rem;
+    transition: transform 0.3s ease;
+    text-align: center;
+    align-content:normal;
+    padding:20px;
+    border-radius:15px;
+}
+
+.box img{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+}
+
+.box:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /*box-shadow: 0 27px 14px 5px rgba(0, 0, 0, 0.15);*/
+}
+
+/* Sección contacto*/
+/*------------------------------------------------*/
+
+
+.contacto{
+    padding:70px;
+}
+.contacto p{
+    margin:0;
+}
+
+.contacto h2,p{
+    text-align: center;
+    padding:10px;
+}
+
+.contacto form{
+    display: flex;
+    flex-direction:column;
+}
+
+.contacto input, .contacto textarea{
+    margin-bottom: 15px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto label{
+    text-align: left;
+    font-size: 1.5rem;
+ 
+}
+.contacto button{
+    align-self:normal;
+}
+
+.buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    background-color: dodgerblue;
+    width:30%;
+    color: white;
+    padding: 10px 20px;
+    margin:10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+
+/*Whatsapp ícono flotante*/
+/*------------------------------------------------*/
+
+.whatsapp {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+  
+  .whatsapp-icon {
+    margin-top:13px;
+  }
+
+/*Estilos footer para todas las pantallas*/
+.footer{
+    background-color: #666;
+    color:white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+
+/*Estilos que aplican solamente para desktop*/
+/*------------------------------------------------*/
+@media only screen and (min-width:768px){
+
+    .hamburger{
+        display:none;
+    }
+
+}
+
+/*Estilos que aplican solamente para mobile*/
+/*------------------------------------------------*/
+@media only screen and (max-width:768px){
+
+
+    /*Escondo nav-menu y con js se muestra, propiedades para nav-menu en mobile*/
+    /*--------------------------------------------------------------------------*/
+    .nav-menu{
+       position:fixed; 
+       left: -100%;
+       top:5rem;
+       display: flex;
+       flex-direction: column;
+       width:100%;
+       text-align: center;
+       background-color: #222;
+       border-radius: 10px;
+       transition:0.3s;
+       box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+    .nav-item{
+        padding: 2.5rem 0;
+    }
+
+    .nav-link{
+        color: #fff;
+    }
+
+    /*Mostramos estilos de menu hamburger*/
+    .hamburger{
+        display: block;
+        cursor:pointer;
+        margin-top: 5px;
+    }
+
+    /*Estilos de los bar del menu hamburger*/
+    /*------------------------------------------------*/
+    .bar{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: #fff;
+     
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /*Oculto opcion redes*/
+
+    .nav-menu .nav-item:nth-child(5){
+        display: none;
+    }
+
+    .nav-menu-drop{
+        display: flex;
+        flex-direction: row;
+    }
+
+    /*Opciones submenu redes sociales*/
+
+    .nav-menu-drop-mobile{
+        display: flex;
+        flex-direction: row;
+        padding:1rem;
+
+    }
+    .nav-menu-drop-mobile li{
+        /* Arriba | Derecha | Abajo | Izquierda */
+        margin: 0 2rem 0 2rem;
+    }
+
+    .nav-menu-drop-mobile a{
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    /* Slide wrapper para mobile*/
+
+    .slider-wrapper{
+        position: relative;
+        max-width: 48rem;
+        margin: 0 auto;
+    }
+
+}
