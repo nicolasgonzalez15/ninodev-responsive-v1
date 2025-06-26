@@ -533,8 +533,11 @@ align-items: center;
 
 /*Estilos que aplican solamente para mobile*/
 /*------------------------------------------------*/
-@media only screen and (max-width:768px){
+@media only screen and (max-width:885px){
 
+    .redes{
+        display: none;
+    }
 
     /*Escondo nav-menu y con js se muestra, propiedades para nav-menu en mobile*/
     /*--------------------------------------------------------------------------*/
