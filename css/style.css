@@ -177,6 +177,7 @@ ul li ul.nav-menu-drop li a:hover{
     cursor: pointer;
     text-align: center;
     transition: transform 0.3s ease;
+    font-size:1.2rem;
 }
 
 .principal .btn-pr:hover{
